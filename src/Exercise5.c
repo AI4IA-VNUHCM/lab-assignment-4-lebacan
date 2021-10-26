@@ -37,8 +37,17 @@ void Ex5(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
 	//Your codes here
-
-}
+	int min,max;
+	for(int i=0;i<m;i++){
+		for(int j=0;j<n;j++){
+			if(a[i][j]<min)
+			min=a[i][j];
+		}
+		if (max<min)
+		max=min;
+	}
+	printf("%d,",max);
+	}
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
