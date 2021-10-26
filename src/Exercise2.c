@@ -52,10 +52,34 @@ void printArray(int a[SIZE][SIZE], int m, int n)
 void Ex2(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
-	//Your codes here
-
+	int i,j,k,max;
+	for (i=0;i<=n;i++){
+	if(i%2==0){
+		for (j=0;j<=m;j++){
+			for(k=j+1;k<m;k++){
+				if (a[j][i]<a[k][i]){
+					max=a[j][i];
+	               a[j][i]=a[k][i];
+				   a[k][i]=max;
+				   }
+		    }
+	    }
+	} 
+	else {
+		for (j=0;j<=m;j++){
+			for(k=j+1;k<m;k++){
+				if (a[j][i]>a[k][i]){
+					max=a[j][i];
+	               a[j][i]=a[k][i];
+				   a[k][i]=max;
+				}
+			}
+		}
+	}
+	}
 	printArray(a, m, n);
-}
+	return 0;
+	} 
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
